@@ -16,4 +16,6 @@ def main():
 
 Course exports will be downloaded to 'exports' folder, and a simple log file is created in 'logs' folder.
 
-There are some built in wait functions to make sure there is enough time to load the pages.. Waiting for an export is set to 60 seconds but feel free to adjust. I works for me!
+There are some built in wait functions to make sure there is enough time to load the pages.. Waiting for an export is set to 60 seconds but feel free to adjust. 
+
+It works for me!
