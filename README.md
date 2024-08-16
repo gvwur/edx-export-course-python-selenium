@@ -4,7 +4,7 @@
 - requests
 - selenium
 
-This script will open FireFox via Selenium and automatically download edx courses as listed in the course_keys.txt file.
+This script will open FireFox via Selenium and automatically download edx courses as listed in the course_keys_moocs.txt file.
 
 Start the script, you will be prompted to enter your edx email and password:
 
