@@ -1,4 +1,5 @@
 import requests
+import getpass
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -27,8 +28,8 @@ def setup_logging():
 def login(driver, username, password):
     # Open the Login page of edX
     driver.get("https://authn.edx.org/login")
-    print("Waiting 10 seconds for the login page to load properly..")
-    time.sleep(10)
+    print("Waiting 6 seconds for the login page to load properly..")
+    time.sleep(6)
 
     # Enter the username
     username_field = WebDriverWait(driver, 10).until(
@@ -52,8 +53,8 @@ def login(driver, username, password):
     print("Clicked sign in..")
 
     # Wait for the login process to complete
-    print("Login done.. Wait 10 sec before proceeding..")
-    time.sleep(10)
+    print("Login done.. Wait 6 sec before proceeding..")
+    time.sleep(6)
 
 def export_course(driver, course_key):
     # Create 'exports' directory if it doesn't exist
@@ -109,18 +110,18 @@ def export_course(driver, course_key):
         logging.exception("Course error: " + course_key) 
 
 def main():
-    setup_logging()
+    username = input("Enter your edX email: ")
+    password = getpass.getpass("Enter your edX password: ")
     
+    setup_logging()
     driver = webdriver.Firefox()
-    username = "your_edx_email"
-    password = "your_edx_password"
     
     # Perform login
     print("Perform login")
     login(driver, username, password)
     
     # Retrieve course keys from the text file and export each course
-    with open('course_keys.txt', 'r') as file:
+    with open('course_keys_moocs.txt', 'r') as file:
         course_keys = file.readlines()
     
     for course_key in course_keys:
