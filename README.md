@@ -4,14 +4,14 @@
 - requests
 - selenium
 
-This script will open FireFox and download edx courses as listed in the course_keys.txt file.
+This script will open FireFox via Selenium and automatically download edx courses as listed in the course_keys.txt file.
 
-To do so, first enter your edx email and pw for the login function:
+Start the script, you will be prompted to enter your edx email and password:
 
 ```
 def main():
-    username = "your_edx_email"
-    password = "your_edx_password"
+    username = input("Enter your edX email: ")
+    password = getpass.getpass("Enter your edX password: ")
 ```
 
 Course exports will be downloaded to 'exports' folder, and a simple log file is created in 'logs' folder.
